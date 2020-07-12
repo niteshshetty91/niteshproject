@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "9808eded-22ce-4a97-98df-61049b1ec32a",
+		"name": "xanger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Security JWT Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/authenticate?mobileNumber=8655530692&otp=1234",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"authenticate"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8655530692"
+						},
+						{
+							"key": "otp",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Policy Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/policy/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"policy",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Customer Policy Info",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t \"customerId\":\"1034\",\r\n\t \"customerName\":\"Rakesh Shetty\",\r\n\t \"insuredName\":\"Rakesh Shetty\",\r\n\t \"dob\":\"2020-01-01\",\r\n\t \"emailAddress\":\"nitesh.shetty@gmail.com\",\r\n\t \"mobileNumber\":\"8655530692\",\r\n\t \"premiumMode\":\"MONTHLY\",\r\n\t \"policyStatus\":\"ACTIVE\",\r\n\t \"customerPanNo\":\"DMYPS2176A\",\r\n\t \"policyIssuanceDate\":\"2020-01-01\",\r\n\t \"contactNumberLastUpdated\":\"2020-01-01\",\r\n\t \"emailAddressLastUpdated\":\"2020-01-01\",\r\n\t \"bankAccountNumber\":\"12345\",\r\n\t \"whatsappOptInStatus\":\"ACTIVE\",\r\n\t \"productName\":\"Product 1\",\r\n\t \"productId\":\"ID34555\",\r\n\t \"reinvestApplicable\":\"true\", \r\n\t \"outstandingPayout\":\"21231.1232\",\r\n\t \"unclaimedAmount\":\"13212.32\",\r\n\t \"neftRegistered\":\"true\",\r\n\t \"lastPremiumPaid\":\"Y\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/policy",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"policy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Email Validation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/policy/byEmailAddressAndDob?emailAddress=nitesh.shetty@gmail.com&dob=2020-01-01",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"policy",
+						"byEmailAddressAndDob"
+					],
+					"query": [
+						{
+							"key": "emailAddress",
+							"value": "nitesh.shetty@gmail.com"
+						},
+						{
+							"key": "dob",
+							"value": "2020-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mobile No Validation",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/policy/byMobileNumberAndDob?mobileNumber=8655530692&dob=2020-01-01",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"policy",
+						"byMobileNumberAndDob"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8655530692"
+						},
+						{
+							"key": "dob",
+							"value": "2020-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Email Updation",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/audit/emailAddress/byPolicyNumber?emailAddress=nitesh.shetty@gmail.com&policyNumber=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"audit",
+						"emailAddress",
+						"byPolicyNumber"
+					],
+					"query": [
+						{
+							"key": "emailAddress",
+							"value": "nitesh.shetty@gmail.com"
+						},
+						{
+							"key": "policyNumber",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mobile Number Updation",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/audit/mobileNumber/byPolicyNumber?mobileNumber=8655530693&policyNumber=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"audit",
+						"mobileNumber",
+						"byPolicyNumber"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8655530693"
+						},
+						{
+							"key": "policyNumber",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PAN Number Updation",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/audit/customerPanNo/byPolicyNumber?customerPanNo=123123&policyNumber=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"audit",
+						"customerPanNo",
+						"byPolicyNumber"
+					],
+					"query": [
+						{
+							"key": "customerPanNo",
+							"value": "123123"
+						},
+						{
+							"key": "policyNumber",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Whatsapp opt in Step1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8081/api/whatsApp/opt/step1?mobileNumber=8655530692",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"whatsApp",
+						"opt",
+						"step1"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8655530692"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Whatsapp opt in Step2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI4NjU1NTMwNjkyIiwiZXhwIjoxNTk0NTY0MDc5LCJpYXQiOjE1OTQ1NDYwNzl9.HFQ45AL5BB0iUx3Cr-M_an36iloui1bSuIX3mv0qsXjHGBITElRPy6dFd8QJtVQ9mWuMqWYGwshzIs_XDmknQg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/api/whatsApp/opt/step2?mobileNumber=8655530692&otp=1234",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"whatsApp",
+						"opt",
+						"step2"
+					],
+					"query": [
+						{
+							"key": "mobileNumber",
+							"value": "8655530692"
+						},
+						{
+							"key": "otp",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
